@@ -12,5 +12,13 @@ jobs:
     on-push: #job name
         runs-on: ubuntu-latest
         steps:  # Steps to be executed in the job
-            - name: "Runnint on master push"  # Step 1
-              run: echo "Running on master push"
+            - name: "Running on master/test push"  # Step 1
+              run: echo "Running on master/test push"
+
+
+
+    on-pull-request: #job name
+        runs-on: ubuntu-latest
+        steps: #Steps tp be executed in the job
+            - name: "Running on pull request" #Step 2
+                run: echo "running on pull request"
