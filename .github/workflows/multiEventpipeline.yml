@@ -4,12 +4,16 @@ on:
         branches:
             - master
             - test
+    pull_request: # Event: Whenever a pull request is made to the repository
+            branches:
+                - master
 
 
 
 
 jobs:
-    on-push: #job name
+    on-push: #job name   job1
+        if: github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:  # Steps to be executed in the job
             - name: "Running on master/test push"  # Step 1
@@ -17,7 +21,8 @@ jobs:
 
 
 
-    on-pull-request: #job name
+    on-pull-request: #job name   job2
+        if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         steps: #Steps tp be executed in the job
             - name: "Running on pull request" #Step 2
